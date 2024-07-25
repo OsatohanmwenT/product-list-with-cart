@@ -3,25 +3,16 @@ import cartIcon from "/assets/images/icon-add-to-cart.svg"
 import addIcon from "/assets/images/icon-increment-quantity.svg"
 import minusIcon from "/assets/images/icon-decrement-quantity.svg"
 import screenSize from "../hooks/screenSize"
-import imageMap from './imageMap.js';
+import imageMap from "../imageMap.js"
 
 export default function Card({ image, category, name, price, addToCart, index, itemInCart, removeItem }) {
     const windowWidth = screenSize();
     const item = itemInCart.find(item => item.index === index) || { quantity: 0 };
 
-    const imageSrc = {
-        thumbnail: imageMap[image.thumbnail],
-        mobile: imageMap[image.mobile],
-        tablet: imageMap[image.tablet],
-        desktop: imageMap[image.desktop]
-      };
-
-      const src = imageSrc[screenCategory] || imageSrc.thumbnail;
-
     return(
         <div className="card">
             <picture>
-                <img className="product-img" src={imageSrc[windowWidth]} alt="dessert-image" />
+                <img className="product-img" src={imageMap[image.desktop]} alt="dessert-image" />
             </picture>
             {item.quantity === 0 ? (
                 <button onClick={() => addToCart(index, name, price, image)} className="cart-btn">
