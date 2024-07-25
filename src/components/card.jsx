@@ -19,7 +19,7 @@ export default function Card({ image, category, name, price, addToCart, index, i
     return(
         <div className="card">
             <picture>
-                <img className="product-img" src={imageSrc[screenCategory]}  alt="dessert-image" />
+                <img className="product-img" src={imageSrc[windowWidth]}  alt="dessert-image" />
             </picture>
             {item.quantity === 0 ? (
                 <button onClick={() => addToCart(index, name, price, image)} className="cart-btn">
