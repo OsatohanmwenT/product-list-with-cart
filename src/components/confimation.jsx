@@ -16,7 +16,7 @@ const ConfirmationCard = ({ itemInCart, formatPrice, totalAmount, clearOrder }) 
                         <div className="order-list" key={index}>
                             <div className="left">
                                 <picture>
-                                    <img className="thumbnail" src={item.image.thumbnail} alt="thumbnail image" />
+                                    <img className="thumbnail" src={imageMap[item.image.thumbnail]} alt="thumbnail image" />
                                 </picture>
                                 <div className="info">
                                         <p className="impt name">{item.name}</p>
