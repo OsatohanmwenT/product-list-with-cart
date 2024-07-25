@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DesertSection from './components/desert-section';
 import CartSection from './components/cart-section';
 import ConfirmationCard from './components/confimation';
-import "assets/images"
+
 
 function App() {
   const [itemInCart, setItemInCart] = useState([]);
