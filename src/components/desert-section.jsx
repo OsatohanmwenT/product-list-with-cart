@@ -1,5 +1,6 @@
 import Card from "./card";
-import data from "../data.json"
+import data from "../data.json";
+import imageMap from './assets/imageMap';
 
 export default function DesertSection({ addToCart, formatPrice, count, itemInCart, removeItem }) {
 
