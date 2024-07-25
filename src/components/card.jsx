@@ -8,10 +8,19 @@ export default function Card({ image, category, name, price, addToCart, index, i
     const windowWidth = screenSize();
     const item = itemInCart.find(item => item.index === index) || { quantity: 0 };
 
+    const imageSrc = {
+        thumbnail: imageMap[image.thumbnail],
+        mobile: imageMap[image.mobile],
+        tablet: imageMap[image.tablet],
+        desktop: imageMap[image.desktop]
+      };
+
+      const src = imageSrc[screenCategory] || imageSrc.thumbnail;
+
     return(
         <div className="card">
             <picture>
-                <img className="product-img" src={image[windowWidth]} alt="dessert-image" />
+                <img className="product-img" src={imageSrc[windowWidth]} alt="dessert-image" />
             </picture>
             {item.quantity === 0 ? (
                 <button onClick={() => addToCart(index, name, price, image)} className="cart-btn">
